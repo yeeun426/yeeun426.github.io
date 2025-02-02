@@ -199,9 +199,9 @@ function NavLink({ eventKey, onClick, ...props }) {
   );
 }
 ```
-✅ Nav.Link를 클릭하면 내부적으로 context.onSelect(eventKey)를 호출해서 Tab.Container에 eventKey를 전달함.
-✅ context.onSelect는 Tab.Container에서 제공하는 onSelect={(k) => setActiveTab(k)}와 연결되어 있음.
-✅ 따라서, Nav.Link가 클릭되면 eventKey가 onSelect로 전달되고, activeTab 상태가 변경됨!
+✅ Nav.Link를 클릭하면 내부적으로 context.onSelect(eventKey)를 호출해서 Tab.Container에 eventKey를 전달함.<br>
+✅ context.onSelect는 Tab.Container에서 제공하는 onSelect={(k) => setActiveTab(k)}와 연결되어 있음.<br/>
+✅ 따라서, Nav.Link가 클릭되면 eventKey가 onSelect로 전달되고, activeTab 상태가 변경됨!<br/>
 
 
 3️⃣ Tab.Container가 onSelect를 처리하는 구조
@@ -215,13 +215,13 @@ function TabContainer({ activeKey, onSelect, children }) {
   );
 }
 ```
-✅ Tab.Container는 NavContext.Provider를 통해 onSelect 함수를 Nav.Link에 전달함.
-✅ Nav.Link를 클릭하면 onSelect(eventKey)가 실행됨.
+✅ Tab.Container는 NavContext.Provider를 통해 onSelect 함수를 Nav.Link에 전달함.<br/>
+✅ Nav.Link를 클릭하면 onSelect(eventKey)가 실행됨.<br/>
 ✅ 결국 setActiveTab(eventKey)가 실행되면서 UI가 변경됨.
 
-4️⃣ 결론: onClick 없이 onSelect가 실행되는 이유
-✅ Nav.Link는 내부적으로 NavContext를 사용해 eventKey를 Tab.Container로 전달함.
-✅ NavContext 안에는 onSelect 함수가 포함되어 있어서, Nav.Link 클릭 시 자동 실행됨.
+4️⃣ 결론: onClick 없이 onSelect가 실행되는 이유<br/>
+✅ Nav.Link는 내부적으로 NavContext를 사용해 eventKey를 Tab.Container로 전달함.<br/>
+✅ NavContext 안에는 onSelect 함수가 포함되어 있어서, Nav.Link 클릭 시 자동 실행됨.<br/>
 ✅ 따라서, Nav.Link를 클릭하면 직접 onClick을 설정하지 않아도 onSelect가 실행된다.
 
 ---
@@ -242,7 +242,7 @@ React-Bootstrap의 Nav나 Tab.Container 같은 컴포넌트에서, <Nav.Link>를
 - 선택된 값을 바꿔주는 함수(setState)를 실행한다.
 - eventKey를 기반으로 특정 동작을 수행할 수 있음.
 
--> 즉, "선택(selection)"이 중요한 UI 요소에는 onSelect가 있다! 🎯
+->  즉, "선택(selection)"이 중요한 UI 요소에는 onSelect가 있다! 🎯
 
 ---
 
