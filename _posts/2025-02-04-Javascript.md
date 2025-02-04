@@ -1,6 +1,6 @@
 ---
-title: "[Day7] Typescript Basic"
-categories: [Ureca, TypeScript]
+title: "Javascript 간단 개념 모음"
+categories: [Frontend, Javascript]
 tags: [alert, prompt, innerHTML, innerText, AJAX, spread 연산자 ]
 image:
   path: /assets/post/2025/javascript/JS.png
