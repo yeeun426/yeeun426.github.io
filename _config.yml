@@ -17,7 +17,7 @@ timezone: Asia/Seoul
 title: yeeun426 # the main title
 
 tagline: |
-  잊기 전에 기록
+  잊기 전에 기록<br/>
   2024년까지의 기록 : https://yeeeon.tistory.com/
 
 description: 프론트엔드 개발자 >- # used by seo meta and the atom feed
