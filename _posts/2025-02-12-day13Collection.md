@@ -52,8 +52,8 @@ public class Test {
 }
 ```
 
-> ❓❓ 사용자 객체랑 new Object는 중복이 추가 되고, new string은 안되는 이유.
-> new Object()는 중복 추가 가능 -> Object는 기본적으로 hashCode()가 다름
+> ❓❓ 사용자 객체랑 new Object는 중복이 추가 되고, new string은 안되는 이유 <br/>
+> new Object()는 중복 추가 가능 -> Object는 기본적으로 hashCode()가 다름<br/>
 > new String("Apple")은 중복 추가 안됨 -> String의 equals()와 hashCode()가 문자열 값으로 비교되기 때문
 
 ### POINT
@@ -259,6 +259,7 @@ public class HashMapTest {
 ✅ 실무에서는 set보단 list를 많이씀 -> 정렬도 되기 때문
 
 ## SUMMARY
+
 | collection  | 특징                 | 중복 허용 | 정렬 지원             |
 |-------------|----------------------|-----------|-----------------------|
 | ArrayList   | 순서 유지, 빠른 조회  | ✅ O      | ❌ (정렬 필요)         |
