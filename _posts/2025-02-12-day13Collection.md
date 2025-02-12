@@ -8,6 +8,13 @@ image:
 published: true
 ---
 
+html과 spring을 어떻게 연결하는 과제인지 잘 이해가 안가서 일단 부족한 부분을 수정했다.
+로그인, 회원가입 모달창을 넣었고, 반응형으로 수정했다.
+
+<a src="https://raccoon-shop.netlify.app/"> https://raccoon-shop.netlify.app/</a>
+
+---
+
 # Collections
 
 예시를 먼저 보고 정리를 해보려 한다.
@@ -282,7 +289,7 @@ public class HashMapTest {
 ### payload에 찍힌 id, pw 값 (제대로 서버와 통신한 것)
 <img src="/assets/post/2025/ureca/day12.png" alt='' width=1300px>
 
-### 아이디값 중복 허용하지 않는 배열로 찍힌다.
+### 아이디값 중복 허용하지 않는 배열로 찍힌다. -> HashMap 사용
 <img src="/assets/post/2025/ureca/collections2.png" alt='' width=1300px>
 
 ```java
@@ -292,7 +299,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
