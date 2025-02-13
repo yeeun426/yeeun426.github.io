@@ -11,7 +11,7 @@ published: true
 html과 spring을 어떻게 연결하는 과제인지 잘 이해가 안가서 일단 부족한 부분을 수정했다.
 로그인, 회원가입 모달창을 넣었고, 반응형으로 수정했다.
 
-<a src="https://raccoon-shop.netlify.app/"> https://raccoon-shop.netlify.app/</a>
+<a href="https://raccoon-shop.netlify.app/"> https://raccoon-shop.netlify.app/</a>
 
 ---
 
