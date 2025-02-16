@@ -1,5 +1,5 @@
 ---
-title: "[Day14] JAVA 알고리즘 기초 30문제"
+title: "[Day15] JAVA 알고리즘 기초 30문제"
 categories: [Ureca, Algorithm]
 tags: [java, Algorithm]
 image:
