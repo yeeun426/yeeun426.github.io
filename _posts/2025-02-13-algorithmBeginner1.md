@@ -1,5 +1,5 @@
 ---
-title: "[Day14] JS 알고리즘 입문 20문제"
+title: "JS 알고리즘 입문 20문제"
 categories: [Ureca, Algorithm]
 tags: [java, ArrayList]
 image:

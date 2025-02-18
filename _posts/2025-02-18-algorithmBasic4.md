@@ -1,5 +1,5 @@
 ---
-title: "[Day17] JAVA 알고리즘 기초 24문제 (124문제 완성)"
+title: "JAVA 알고리즘 기초 24문제 (124문제 완성)"
 categories: [Ureca, Algorithm]
 tags: [java, Algorithm]
 image:

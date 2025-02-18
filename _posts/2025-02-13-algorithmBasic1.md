@@ -1,5 +1,5 @@
 ---
-title: "[Day14] JAVA 알고리즘 기초 40문제"
+title: "JAVA 알고리즘 기초 40문제"
 categories: [Ureca, Algorithm]
 tags: [java, ArrayList]
 image:
