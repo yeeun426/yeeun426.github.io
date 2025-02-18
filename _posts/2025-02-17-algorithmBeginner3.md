@@ -3,7 +3,7 @@ title: "JS 알고리즘 입문 20문제"
 categories: [Ureca, Algorithm]
 tags: [javascript, algorithm]
 image:
-  path: /assets/post/2025/ureca/algorithmJS.jpeg
+  path: /assets/post/2025/ureca/algorithmBeginner3.png
   alt: JS
 published: true
 ---
@@ -173,12 +173,25 @@ function solution(s) {
 
 ### 12. 소인수 분해
 ```js
-
+function solution(n) {
+    var answer = [];
+    let d = 2;
+    while (n != 1) {
+        if (n % d != 0) d++;
+        else {
+            n /= d;
+            if(!answer.includes(d)) answer.push(d);
+        }
+    }
+    return answer;
+}
 ```
 
 ### 13. 이진수 더하기
 ```js
-
+function solution(bin1, bin2) {
+    return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+}
 ```
 
 ### 14. 잘라서 배열로 저장하기
@@ -211,27 +224,85 @@ function solution(numbers, k) {
 
 ### 16. 문자열 계산하기
 ```js
+function solution(my_string) {
+    const strArr = my_string.split(" ");
+    let answer = Number(strArr[0]);
+    for(let i = 1 ; i < strArr.length ; i+=2) {
+        if(strArr[i] == "+") {
+            answer += Number(strArr[i+1]);
+        } else {
+            answer -= Number(strArr[i+1])
+        }
+    }
+    return answer;
+}
 
 ```
 
 ### 17. 삼각형의 완성조건(2)
 ```js
-
+function solution(sides) {
+    var answer = 0;
+    sides.sort((a,b) => a - b);
+    
+    // 가장 긴 변이 a[1]인 경우
+    let small = sides[1] - sides[0] + 1;
+    answer += sides[1] - small + 1;
+    
+    // 나머지 한 변이 긴 변인 경우
+    let big = sides[0] - 1;
+    answer += big;
+    
+    return answer;
+}
 ```
 
 ### 18. 영어가 싫어요
 ```js
-
+function solution(numbers) {
+    var answer = 0;
+    const numArr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    for(let idx in numArr) numbers = numbers.replaceAll(numArr[idx], idx.toString());
+    return Number(numbers);
+}
 ```
 
 ### 19. 구슬을 나누는 경우의 수
 ```js
-
+function solution(balls, share) {
+    let answer = 1;
+    for(let i = balls; i > share ; i--) answer *= i; 
+    for(let i = 1 ; i <= balls - share ; i++) answer /= i;
+    return Math.round(answer);
+}
+// 반올림을 해야하는데 parseInt 처리해서 시간이 오래걸림. 
 ```
 
 ### 20. 캐릭터의 좌표
 ```js
+function solution(keyinput, board) {
+    let answer = [0, 0];
+    let maxX = Math.floor(board[0] / 2);
+    let maxY = Math.floor(board[1] / 2);
 
+    for (let input of keyinput) {
+        switch (input) {
+            case "up":
+                if (answer[1] < maxY) answer[1]++;
+                break;
+            case "down":
+                if (answer[1] > -maxY) answer[1]--;
+                break;
+            case "left":
+                if (answer[0] > -maxX) answer[0]--;
+                break;
+            case "right":
+                if (answer[0] < maxX) answer[0]++;
+                break;
+        }
+    }
+    return answer;
+}
 ```
 
 ---
