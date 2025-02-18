@@ -1,15 +1,17 @@
 ---
-title: "[Day17] 순열/조합 문제"
+title: "[Mission] 내가 만든 순열/조합/부분집합 문제"
 categories: [Ureca, Algorithm]
 tags: [Combination, Permutation]
+image:
+  path: /assets/post/2025/ureca/combination.png
+  alt: java
 published: true
 ---
 
-### 문제 만들어보기 (조합 / 순열)
-
-#### 💡 순열 : 혼자 식당에가서 먹을 메뉴를 겹치지 않게 2개 시켜서 먹는 경우의 수 
-#### 💡 조합 : 둘이 식당에가서 각자 먹을 메뉴를 겹치지 않게 각각 하나씩 시켜서 먹는 경우의 수
-
+### 💡 순열 
+```혼자 식당에가서 먹을 메뉴를 겹치지 않게 2개 시켜서 먹는 경우의 수 ```
+### 💡 조합 
+```둘이 식당에가서 각자 먹을 메뉴를 겹치지 않게 각각 하나씩 시켜서 먹는 경우의 수```
 
 ```java
 package task;
@@ -34,7 +36,7 @@ public class 식당_순열_조합 {
 		results = new int[2];
         totalCnt = 0;
         혼자식사(0,0);
-		System.out.println("순열 개수:" + totalCnt);
+		System.out.println("조합 개수:" + totalCnt);
 		
         System.out.println("두명 식사");
         results = new int[2];
@@ -75,5 +77,50 @@ public class 식당_순열_조합 {
             isSelected[i] = false;
         }
     }
+}
+```
+
+### 💡 부분집합 : 메뉴 조합
+
+```
+김밥, 떡볶이, 튀김, 오뎅, 치즈볼 중에서 식사할 메뉴를 골라서 먹으려 합니다. 
+식사할 메뉴를 선택하는 방법은 여러 가지가 있을 수 있습니다. 예를 들어, 한 가지 메뉴만 선택하거나, 두 가지 메뉴를 고를 수도 있습니다.       
+또한, 세 가지 메뉴나 네 가지 메뉴를 선택하는 것도 가능합니다. 가능한 모든 메뉴의 조합을 구하세요.
+```
+
+```java
+package task;
+
+public class 식당_부분집합 {	
+	static int totalCnt;
+	static String[] menu = {"김밥", "떡볶이", "튀김", "오뎅", "치즈볼"}; // 메뉴 5개
+	static boolean[] isSelected;
+	
+	public static void main(String[] args) {		
+		isSelected = new boolean[5];	
+		subset(0);	
+		System.out.println("총 부분집합의 개수: " + totalCnt);
+	}
+	
+	// 부분집합 생성 함수
+	public static void subset(int cnt) {
+		// cnt가 5이면 모든 원소를 고려한 상태이므로 부분집합을 하나 완성한 것
+		if (cnt == 5) {
+			++totalCnt;
+			for (int i = 0; i < 5; i++) {
+				System.out.print((isSelected[i] ? menu[i] : "X") + " ");
+			}
+			System.out.println(); 
+			return; 
+		}
+		
+		// 현재 메뉴를 선택하는 경우
+		isSelected[cnt] = true;
+		subset(cnt + 1); // 다음 메뉴로 진행
+		
+		// 현재 메뉴를 비선택하는 경우
+		isSelected[cnt] = false; 
+		subset(cnt + 1); // 다음 메뉴로 진행
+	}
 }
 ```
