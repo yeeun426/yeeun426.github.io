@@ -12,6 +12,7 @@ tabs:
   # format: <filename_without_extension>: <value>
   home: Home
   categories: Categories
+  til: Today I Learned # ← 이거 추가!
   tags: Tags
   archives: Archives
   about: About
