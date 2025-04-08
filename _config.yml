@@ -171,6 +171,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  til:
+    output: true
+    permalink: /til/:path/
 
 defaults:
   - scope:
@@ -225,8 +228,3 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-
-collections:
-  til:
-    output: true
-    permalink: /til/:path/
