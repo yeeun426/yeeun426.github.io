@@ -206,6 +206,7 @@ function NavLink({ eventKey, onClick, ...props }) {
 
 3️⃣ Tab.Container가 onSelect를 처리하는 구조
 
+{% raw %}
 ```tsx
 function TabContainer({ activeKey, onSelect, children }) {
   return (
@@ -215,6 +216,8 @@ function TabContainer({ activeKey, onSelect, children }) {
   );
 }
 ```
+{% endraw %}
+
 ✅ Tab.Container는 NavContext.Provider를 통해 onSelect 함수를 Nav.Link에 전달함.<br/>
 ✅ Nav.Link를 클릭하면 onSelect(eventKey)가 실행됨.<br/>
 ✅ 결국 setActiveTab(eventKey)가 실행되면서 UI가 변경됨.
